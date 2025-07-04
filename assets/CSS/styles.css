@@ -1,0 +1,516 @@
+/* Fonte */
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Reset extra para body e section */
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    margin: 0;
+    padding: 0%;
+}
+
+/* Header */
+.header {
+    background-color: #000000;
+    height: 5rem;
+    /* Altura fixa */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* espaça elementos */
+    padding: 0 1rem;
+    flex-wrap: nowrap;
+    /*impede quebra*/
+}
+
+/* Logo */
+.header img {
+    width: 4rem;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Caixa de Pesquisa */
+.caixaPesquisa {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    /*impede o encolhimento*/
+}
+
+/* Input de pesquisa */
+.caixaPesquisa input {
+    padding: 0.9rem 2.5rem 0.9rem 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 20rem;
+}
+
+.caixaPesquisa input::placeholder {
+    text-align: left;
+}
+
+.caixaPesquisa input:focus {
+    outline: none;
+}
+
+/* Botão icone */
+.caixaPesquisa button {
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    color: #44021E;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    /* mais seguro que usar margin-left */
+    transform: translateY(-50%);
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .caixaPesquisa input {
+        width: 19rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: row;
+        /* mantém lado a lado */
+        justify-content: space-between;
+        padding: 0 1rem;
+        height: auto;
+        /* não força altura */
+    }
+
+    .caixaPesquisa input {
+        max-width: 16rem;
+    }
+
+    .header img {
+        width: 3.5rem;
+        /* um pouco menor */
+    }
+}
+
+@media (max-width: 480px) {
+    .caixaPesquisa input {
+        max-width: 13rem;
+    }
+
+    .header img {
+        width: 3rem;
+    }
+}
+
+
+/* Imagem de capa */
+.secao-capa {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    overflow-x: hidden;
+    /* Garante que não haja rolagem lateral */
+    margin: 0;
+    padding: 1% 1% 0% 1%;
+    background-color: #000000;
+}
+
+.img-capa {
+    width: 100%;
+    height: auto;
+    max-width: 900px;
+    object-fit: contain;
+    display: block;
+    margin: 0%;
+    border-radius: 5%;
+}
+
+/* Para telas menores, reduz a altura */
+@media (max-width: 768px) {
+    .img-capa {
+
+        border-radius: 5%;
+    }
+}
+
+@media (max-width: 480px) {
+    .img-capa {
+
+        border-radius: 5%;
+    }
+}
+
+
+
+/*campo botões fundo vermelho*/
+.campo-botoes {
+    background-color: #912c04;
+    height: auto;
+    /* Altura fixa */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    /*espaço entre os botões*/
+    flex-wrap: wrap;
+    /**/
+    padding: 1rem 0;
+}
+
+.botao {
+    background: none;
+    border: 2px solid transparent;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-decoration: none;
+    /*tirar a linha embaixo do link*/
+}
+
+.botao:hover {
+    background-color: #8F3C46;
+    color: #ffffff;
+}
+
+
+
+.botao-ativo {
+    background-color: white;
+    color: #8F3C46;
+
+}
+
+/*imagens das receitas*/
+.container-fundo {
+    background-color: #f0f0f0;
+    /* cor de fundo da div principal */
+    padding: 20px;
+    /* espaçamento interno */
+    justify-content: center;
+
+    display: flex;
+}
+
+.grid-imagens {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 colunas iguais */
+    gap: 10px;
+    /* espaço entre as imagens */
+
+
+}
+
+@media (max-width: 768px) {
+    .grid-imagens {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 colunas em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-imagens {
+        grid-template-columns: 1fr;
+        /* 1 coluna em telas bem pequenas */
+    }
+}
+
+.imagem-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    max-width: 250px;
+    display: block;
+}
+
+
+
+.imagem-item img {
+    width: 100%;
+    display: block;
+    transition: filter 0.3s ease, transform 0.3s ease;
+    border-radius: 4px;
+}
+
+.imagem-item span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    /* Mantém o texto como parte do link, mas evita conflitos no clique */
+}
+
+.imagem-item:hover img {
+    filter: brightness(50%);
+    transform: scale(1.05);
+    /* opcional: leve zoom ao passar o mouse */
+}
+
+.imagem-item:hover span {
+    opacity: 1;
+    /* Mostra o texto ao passar o mouse */
+}
+
+/*campo aviso fundo vermelho*/
+.campo-aviso {
+    background-color: #912c04;
+    height: auto;
+    /* Altura fixa */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.palavra-maior {
+    color: #fff;
+    font-weight: bold;
+    margin: 0;
+}
+
+.palavra-menor {
+    color: #fff;
+    margin: 0;
+
+}
+
+/*campo agradecimento*/
+.campo-agradecimento {
+    background-color: black;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 2%;
+    width: 100%;
+    padding: 1% 0% 0%
+}
+
+/*campo imagens agradecimento*/
+
+.recado {
+    width: 500px;
+    min-width: 280px;
+    /* evita que fique muito pequeno */
+
+}
+
+/* Telas menores: ajustar para mais próximo */
+
+@media (max-width: 760px) {
+
+    .chef,
+    .recado {
+        width: 45%;
+
+    }
+}
+
+@media (max-width: 480px) {
+
+    .chef,
+    .recado {
+        width: 90%;
+        /* ou 100% */
+    }
+}
+
+
+.campo-quem-somos {
+    background-color: #912c04;
+    height: auto;
+    /* Altura fixa */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    gap: 40px;
+
+}
+
+.campo-quem-somos p {
+    color: #fff;
+    cursor: pointer;
+}
+
+
+
+.campo-rede {
+    background-color: #f0f0f0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    gap: 1px;
+}
+
+.campo-rede img {
+    width: 4rem;
+    cursor: pointer;
+    height: 4rem;
+}
+
+
+
+
+.endereco {
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.endereco img {
+    width: 2rem;
+    height: auto;
+}
+
+/*-------------------------------------------------------------*/
+
+/*Tela de pedidos*/
+.Pedido {
+    background-color: #912C04;
+}
+
+.titulo p {
+    font-size: 2rem;
+    padding: 5% 0% 0% 7%;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.titulo-pedido {
+    font-size: 10rem;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* Flex para alinhar imagem e texto lado a lado */
+.conteudo-pedido {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    flex-wrap: wrap;
+    /* Para se ajustar em telas menores */
+}
+
+
+.Pedido img {
+    width: 30rem;
+    padding: 0% 0% 0% 7%;
+}
+
+.descricao p {
+    color: white;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    Max-width: 30rem;
+}
+
+
+/*botão*/
+.botoes-pedido {
+    height: auto;
+    /* Altura fixa */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    /*espaço entre os botões*/
+    flex-wrap: wrap;
+    /**/
+
+}
+
+.botao-comprar {
+    background: none;
+    border: 2px solid transparent;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 25px;
+    text-decoration: none;
+    background-color: #241B11;
+    width: 16rem;
+    text-align: center;
+}
+
+
+.botao-comprar:hover {
+    background-color: #3a2e1c;
+    /* cor ao passar o mouse */
+    color: #fff;
+    /* manter cor branca */
+    text-decoration: none;
+    /* remover sublinhado */
+}
+
+/*após os botões*/
+.aviso {
+    color: #fff;
+    padding: 3rem 0rem 0.5rem 0rem;
+}
+
+.aviso-dois {
+    color: #fff;
+    margin-top: 0rem;
+}
+
+/*carrinho de compras*/
+.carrinho {
+    position: relative;
+    font-size: 1.5rem;
+    margin-right: 2rem;
+    color: white;
+}
+
+#contador {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 8px;
+    font-size: 0.8rem;
+    position: absolute;
+    top: -8px;
+    right: -10px;
+}

@@ -120,7 +120,6 @@ section {
     }
 }
 
-
 /* Imagem de capa */
 .secao-capa {
     display: grid;
@@ -146,19 +145,15 @@ section {
 /* Para telas menores, reduz a altura */
 @media (max-width: 768px) {
     .img-capa {
-
         border-radius: 5%;
     }
 }
 
 @media (max-width: 480px) {
     .img-capa {
-
         border-radius: 5%;
     }
 }
-
-
 
 /*campo botões fundo vermelho*/
 .campo-botoes {
@@ -195,12 +190,9 @@ section {
     color: #ffffff;
 }
 
-
-
 .botao-ativo {
     background-color: white;
     color: #8F3C46;
-
 }
 
 /*imagens das receitas*/
@@ -210,7 +202,6 @@ section {
     padding: 20px;
     /* espaçamento interno */
     justify-content: center;
-
     display: flex;
 }
 
@@ -220,8 +211,6 @@ section {
     /* 3 colunas iguais */
     gap: 10px;
     /* espaço entre as imagens */
-
-
 }
 
 @media (max-width: 768px) {
@@ -245,8 +234,6 @@ section {
     max-width: 250px;
     display: block;
 }
-
-
 
 .imagem-item img {
     width: 100%;
@@ -304,7 +291,6 @@ section {
 .palavra-menor {
     color: #fff;
     margin: 0;
-
 }
 
 /*campo agradecimento*/
@@ -319,34 +305,27 @@ section {
 }
 
 /*campo imagens agradecimento*/
-
 .recado {
     width: 500px;
     min-width: 280px;
     /* evita que fique muito pequeno */
-
 }
 
 /* Telas menores: ajustar para mais próximo */
-
 @media (max-width: 760px) {
-
     .chef,
     .recado {
         width: 45%;
-
     }
 }
 
 @media (max-width: 480px) {
-
     .chef,
     .recado {
         width: 90%;
         /* ou 100% */
     }
 }
-
 
 .campo-quem-somos {
     background-color: #912c04;
@@ -366,8 +345,6 @@ section {
     cursor: pointer;
 }
 
-
-
 .campo-rede {
     background-color: #f0f0f0;
     width: 100%;
@@ -383,9 +360,6 @@ section {
     cursor: pointer;
     height: 4rem;
 }
-
-
-
 
 .endereco {
     background-color: #f0f0f0;
@@ -432,7 +406,6 @@ section {
     /* Para se ajustar em telas menores */
 }
 
-
 .Pedido img {
     width: 30rem;
     padding: 0% 0% 0% 7%;
@@ -444,7 +417,6 @@ section {
     line-height: 1.5;
     Max-width: 30rem;
 }
-
 
 /*botão*/
 .botoes-pedido {
@@ -474,7 +446,6 @@ section {
     width: 16rem;
     text-align: center;
 }
-
 
 .botao-comprar:hover {
     background-color: #3a2e1c;

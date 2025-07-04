@@ -25,7 +25,7 @@ const imagensPorPagina = {
     sobremesas: [
         '../Images/sobremesas/Mousse de chocolate.png', '../Images/sobremesas/bolo red.png', '../Images/sobremesas/bolo chocolate.png',
         '../Images/sobremesas/pudimchocolate.png', '../Images/sobremesas/pudimmanga.png', '../Images/sobremesas/tortalimao.png',
-        '../Images/sobremesas/tortamorango.png', '../Images/sobremesas/cupkaques.png', '../Images/sobremesas/churros.png'
+        '../Images/sobremesas/tortamorango.png', '../Images/sobremesas/cupcakes.png', '../Images/sobremesas/churros.png'
     ],
     hamburgueres: [
         '../Images/hamburgueres/hamburguer1.png', '../Images/hamburgueres/hamburguer2.png', '../Images/hamburgueres/hamburguer3.png',
@@ -35,14 +35,12 @@ const imagensPorPagina = {
 }
 
 
-
 const pagina = document.body.className;
 
 const imagens = document.querySelectorAll('.grid-imagens img');
 imagens.forEach((img, index) => {
     img.src = imagensPorPagina[pagina][index];
 });
-
 
 /*descrições das comidas*/
 document.querySelectorAll('.imagem-item').forEach(item => {
@@ -80,6 +78,3 @@ function buscar() {
         item.style.display = texto.includes(termo) ? "list-item" : "none";
     });
 }
-
-
-
